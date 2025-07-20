@@ -19,8 +19,14 @@ public class CourseController {
         return courseRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public  Course getCourseById(@PathVariable Integer id){
+        return  courseRepository.findById(id).get();
+    }
+
     @PostMapping("/create")
     public Course createCourse(@RequestBody Course course) {
         return courseRepository.save(course);
     }
+
 }

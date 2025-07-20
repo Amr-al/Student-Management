@@ -18,7 +18,7 @@ import java.util.Set;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    private Long id;
     @Column(unique = true, nullable = false)
     private String title;
     private String description;
@@ -26,10 +26,9 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name = "professor_id")
+    @ManyToMany(mappedBy = "courses")
     @JsonIgnore
-    private Professor professor;
+    private Set<Professor> professors;
 
 
 }

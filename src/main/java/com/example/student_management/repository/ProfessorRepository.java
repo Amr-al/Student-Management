@@ -1,4 +1,7 @@
 package com.example.student_management.repository;
 
-public interface ProfessorRepository {
+import com.example.student_management.model.Professor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProfessorRepository extends JpaRepository<Professor, Integer> {
 }

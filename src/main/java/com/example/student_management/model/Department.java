@@ -17,7 +17,7 @@ import java.util.Set;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    private Long id;
     @Column(unique = true, nullable = false)
     private String name;
 
